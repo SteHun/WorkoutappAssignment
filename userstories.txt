@@ -4,7 +4,7 @@ inviting.
 When I start up the app, I do not feel overwhemed with options and I can easilly 
 get where I need to go. 
 -----------------------
-
+**
 As a novice user, I want the app to create personallised workouts for me depending on my 
 day, level and goals, as to motivate me to keep active
 
@@ -18,7 +18,7 @@ as to motivate myself and others.
 In the app, I see a "community" tab where I can see work-outs of my friends
 Also, I can share my own workouts to others. 
 -----------------------
-
+**
 As a user, I want the app to work with my existing equipment, including gym equipment 
 (like threadmill), smartwatches and fitness band, to provide for more insightful 
 data. 
@@ -26,7 +26,7 @@ data.
 In the app settings, I can pair supported devices. Their metrics then show up
 in my workouts. 
 -----------------------
-
+**
 As a user, I want the app to support pre-defined gradual workout plans, such as the 
 "Couch to 5K program", to encourage gradual progress and manegable goals. 
 
@@ -48,7 +48,7 @@ request the relevant data, to personallise the app.
 When first starting the app, a screen pops up asking for you personal information
 and preferences. It then gives a brief overview of the features of the app.
 -----------------------
-
+**
 As a user, I wish for the app to allow me to set activity goals, to motivate me to 
 consistently be active. 
 
@@ -63,7 +63,7 @@ allowing me to use the app.
 The app should detect the phone's language and show everything in the correct language.
 The user can override the language from the settings. 
 -----------------------
-
+**
 As a user, I want the app to record elapsed time, distance, pace, and (if enabled)
 GPS location, to gain further insight into my work-out, while running it and afterwards. 
 
@@ -82,7 +82,7 @@ This allows the user to share an image with workout-info with their
 phone OS's share window. 
 -----------------------
 
-
+**
 As a user, I want to pause the workout, and resume later to take a breather. 
 
 In the currren workout view, there is a pause button. Pressing it pauses the workout. 
@@ -96,7 +96,7 @@ even if just a little bit.
 when I am done with my workout, even if it wasn't a lot,
 the app is positive about the fact that I worked out, through a message.
 -------------------------
-
+**
 as a user, I want the app to track walks as well instead of only runs, 
 so that I can still keep track of my progress/movement on days
  where I do not have enough energy to run.
@@ -104,7 +104,7 @@ so that I can still keep track of my progress/movement on days
 while I'm on a walk, the app registers a lower speed and sees this as a walk and
 not a run, and adjusts any feedback accordingly.
 -------------------------
-
+**
 as a user, I want the app to allow me to keep a list of my existing fitness
 equipment and use that to make plans for workout session, so that I use all my 
 equipment, and do not get any workouts that require equipment I do not have 
@@ -113,7 +113,7 @@ access to.
 after giving the app the information about what equipment I have available to me, 
 it adjusted the workouts it suggests to that information
 -------------------------
-
+**
 as a novice user, I want the app to prioritize simple metrics, so that I can more 
 easily track my progress, without information I do not care about or know the 
 significance of.
@@ -121,7 +121,7 @@ significance of.
 when looking up information about my run to see how I did, I see simple things 
 like distance and speed first before metrics like heartrate
 --------------------------
-
+**
 as a user, I want the app to have customizable goals, so that if I think a 
 workout will be too much or take too long, I can lessen what I do in the workout.
 
@@ -129,7 +129,7 @@ when I have chosen what workout I wish to do for today, I get an option to lesse
 or leave out parts of the workout in case I do not have the energy or time to 
 complete the full workout.
 ---------------------------
-
+**
 as a user, I want the app to keep a record of my progress (progress log), 
 so that I can more easily see the long term progress that I am making through the
 use of this app.
