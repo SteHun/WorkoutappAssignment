@@ -1,23 +1,85 @@
+# Domain model
 ```mermaid
 classDiagram
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-      +String beakColor
-      +swim()
-      +quack()
+    class Workout{
+      Duration
+      Intensity 
     }
-    class Fish{
-      -int sizeInFeet
-      -canEat()
+    RunningWorkout <|-- Workout
+    class RunningWorkout{
+      Route
+      AverageSpeed
     }
-    class Zebra{
-      +bool is_wild
-      +run()
+    ThreadmillWorkout <|-- Workout
+    class ThreadmillWorkout{
+      AverageSpeed
+      Equipment
+    }
+    WalkingWorkout <|-- Workout
+    class WalkingWorkout{
+      Route
+      AverageSpeed
+    }
+    FitnessWorkout <|-- Workout
+    class FitnessWorkout{
+      Equipment
+    }
+```
+
+```mermaid
+  classDiagram
+
+    class WorkoutPlan{
+      Duration
+      Intensity 
+    }
+    RunningWorkoutPlan <|-- WorkoutPlan
+    class RunningWorkoutPlan{
+      Length
+    }
+    ThreadmillWorkoutPlan <|-- WorkoutPlan
+    class ThreadmillWorkoutPlan{
+      Speeds
+    }
+    WalkingWorkoutPlan <|-- WorkoutPlan
+    class WalkingWorkoutPlan{
+      Length
+    }
+    FitnessWorkoutPlan <|-- WorkoutPlan
+    class FitnessWorkoutPlan{
+      Notes
+    }
+```
+
+```mermaid
+  classDiagram
+    class CurrentActivity{
+      Pause()
+      Resume()
+    }
+
+    class UserPrefrences{
+      Equipment
+      ActivityGoal
+      ChangePrefrence()
+    }
+
+    class ProgressLog{
+      WorkOuts
+      Metrics
+    }
+  
+    class User{
+      UserPrefrences
+      ProgressLog
+      FriendList
+      SharedWorkouts
+      PersonalData
+    }
+```
+```mermaid
+  classDiagram
+    class TODO{
+      User Interface stuff
     }
 ```
