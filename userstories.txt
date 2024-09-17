@@ -12,18 +12,11 @@ In the app, I see a few suggestions for workouts on this day, depending on my le
 with several intensities to choose from. 
 -----------------------
 
-As a user, I wish for the app to include a way to share my workouts with (just friends or
-an entire public community???) as to motivate myself and others. 
+As a user, I wish for the app to include a way to share my workouts with friends
+as to motivate myself and others. 
 
-<this need clarification, but for now...>
-In the app, I see a "community" tab where I can see work-outs of my (friends/strangers)
+In the app, I see a "community" tab where I can see work-outs of my friends
 Also, I can share my own workouts to others. 
------------------------
-
-As a user, I want the app to track my progress using the statistics of my work-outs
-to show me my progress
-
-<Please clarify, how to show progress if we need to remain positive?>
 -----------------------
 
 As a user, I want the app to work with my existing equipment, including gym equipment 
@@ -32,10 +25,6 @@ data.
 
 In the app settings, I can pair supported devices. Their metrics then show up
 in my workouts. 
------------------------
-
------------As a user, I want friendly, encouraging notifications at the right time, 
-to motivate me to keep active. 
 -----------------------
 
 As a user, I want the app to support pre-defined gradual workout plans, such as the 
