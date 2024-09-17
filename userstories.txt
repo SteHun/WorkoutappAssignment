@@ -1,0 +1,100 @@
+As a novice user, I want the app to not have to many options, to make the app feel more 
+inviting. 
+
+When I start up the app, I do not feel overwhemed with options and I can easilly 
+get where I need to go. 
+-----------------------
+
+As a novice user, I want the app to create personallised workouts for me depending on my 
+day, level and goals, as to motivate me to keep active
+
+In the app, I see a few suggestions for workouts on this day, depending on my level 
+with several intensities to choose from. 
+-----------------------
+
+As a user, I wish for the app to include a way to share my workouts with (just friends or
+an entire public community???) as to motivate myself and others. 
+
+<this need clarification, but for now...>
+In the app, I see a "community" tab where I can see work-outs of my (friends/strangers)
+Also, I can share my own workouts to others. 
+-----------------------
+
+As a user, I want the app to track my progress using the statistics of my work-outs
+to show me my progress
+
+<Please clarify, how to show progress if we need to remain positive?>
+-----------------------
+
+As a user, I want the app to work with my existing equipment, including gym equipment 
+(like threadmill), smartwatches and fitness band, to provide for more insightful 
+data. 
+
+In the app settings, I can pair supported devices. Their metrics then show up
+in my workouts. 
+-----------------------
+
+-----------As a user, I want friendly, encouraging notifications at the right time, 
+to motivate me to keep active. 
+-----------------------
+
+As a user, I want the app to support pre-defined gradual workout plans, such as the 
+"Couch to 5K program", to encourage gradual progress and manegable goals. 
+
+I can select a pre-defined long-term program to follow from a menu. 
+The app will then suggest the next work-out in line from my program. 
+-----------------------
+
+As a user, I want the app to show me friendly, encouraging messages to 
+further motivate me. 
+
+After a work-out is over, an appropriate message is randomly shown. 
+Similar messages appear in the progress log. 
+-----------------------
+
+
+As a first-time user, I want the app to include an introduction sequence to 
+request the relevant data, to personallise the app. 
+
+When first starting the app, a screen pops up asking for you personal information
+and preferences. It then gives a brief overview of the features of the app.
+-----------------------
+
+As a user, I wish for the app to allow me to set activity goals, to motivate me to 
+consistently be active. 
+
+In settings, the user finds an option to set a daily goal for active minutes. 
+The home screen shows the goal clearly, as well as a percentage completed. 
+This feature should also be integrated into the push notifications. 
+-----------------------
+
+As a non-English speaking user, I want the app to be translated to my language, 
+allowing me to use the app. 
+
+The app should detect the phone's language and show everything in the correct language.
+The user can override the language from the settings. 
+-----------------------
+
+As a user, I want the app to record elapsed time, distance, pace, and (if enabled)
+GPS location, to gain further insight into my work-out, while running it and afterwards. 
+
+When the user starts a work-out for a relevant activity (for example, not when
+running on a threadmill), the app should show the location and taken path
+in the current workout view. When the workout is saved, the taken path, 
+including data at each point, should be revealed. 
+-----------------------
+
+
+As a user, I want to export my achievements to external social media apps 
+to share my progress with friends
+
+When viewing a past workout, there is a share button. 
+This allows the user to share an image with workout-info with their 
+phone OS's share window. 
+-----------------------
+
+
+As a user, I want to pause the workout, and resume later to take a breather. 
+
+In the currren workout view, there is a pause button. Pressing it pauses the workout. 
+After this, the workout can be resumed or quit. 

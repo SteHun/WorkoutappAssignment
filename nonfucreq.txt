@@ -1,0 +1,31 @@
+The app should load all features in under 2 % over 99% of the time on
+all new currently sold devices from Apple, Samsung, and google. 
+For network functions, it will be assumed that the user has a decent internet connection. 
+This is to make sure the app is a pleasant experience for anyone. 
+(In this case it would probebly be best to allow testing on
+the slowest phone in this criterium)
+
+The app should continue to work as described above, even as usage ramps up. 
+The system should be able to hande 500.000 concurrent users. 
+This can be done through performance tests of underlying infrastructure. 
+Also this is to make sure the app is a pleasant experience for anyone. 
+
+The app's services should be fully functional 99.5% of the times. 
+This is important for those who depend on the app to stay active. 
+
+All sent user data should be encrypted, and the app should comply with GDPR. Furthermore: 
+Sensitive user data: user profiles, progress data, and payment information
+should be stored encrypted. 
+This is not just to maintain user trust, but also to eliviate possible legal issues. 
+
+The codebase should be well-documented and tested
+90% of functions need a simple documentation string. 
+80% of functions need a unit test. 
+90% of systems need integration tests. 
+This is to improve overal reliability. 
+(note, extensive documentation kind of goes against agile)
+
+The app should allow for tracking (including GPS) for 7 hours from 100%
+on any new, modern phone from Apple, Samsung, or Google. 
+This is to ensure a worry-free experience for phones across the price spectrum
+where it would be reasonable. 

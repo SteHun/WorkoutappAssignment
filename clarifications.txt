@@ -1,0 +1,19 @@
+You stated that the app should be developed in an agile way. 
+You also requested extensive documentation. 
+Agile requires developers to not write extensive documentation. 
+Could you please clarify?
+We will assume the app will use agile principles, except for the documentation. 
+
+The main goal for the community features seems a little unclear. 
+Is it supposed to create a public social media where people upload their
+work-outs for everyone? If so, does it need some kind of 
+recommendation algorithm? Or is it just for people you are friends with? 
+We will assume the app only connects with those you befriended. 
+
+It is requested to remain positive at all times. But what happens 
+when the user stops training. Should it still show them positive messages?
+Particularly the "progress menu" seems difficult. How do you
+keep the positive messages while showing a downward graph? 
+We will assume to keep to a positive tone whenever possible, and to
+use a motivational tone when positive would seem sarcastic. 
+
