@@ -98,3 +98,53 @@ As a user, I want to pause the workout, and resume later to take a breather.
 
 In the currren workout view, there is a pause button. Pressing it pauses the workout. 
 After this, the workout can be resumed or quit. 
+-------------------------
+
+as a user, I want the app to make it clear every movement is a win,
+so that even on days where I have little energy, I stay motivated to work out,
+even if just a little bit.
+
+when I am done with my workout, even if it wasn't a lot,
+the app is positive about the fact that I worked out, through a message.
+-------------------------
+
+as a user, I want the app to track walks as well instead of only runs, 
+so that I can still keep track of my progress/movement on days
+ where I do not have enough energy to run.
+
+while I'm on a walk, the app registers a lower speed and sees this as a walk and
+not a run, and adjusts any feedback accordingly.
+-------------------------
+
+as a user, I want the app to allow me to keep a list of my existing fitness
+equipment and use that to make plans for workout session, so that I use all my 
+equipment, and do not get any workouts that require equipment I do not have 
+access to.
+
+after giving the app the information about what equipment I have available to me, 
+it adjusted the workouts it suggests to that information
+-------------------------
+
+as a novice user, I want the app to prioritize simple metrics, so that I can more 
+easily track my progress, without information I do not care about or know the 
+significance of.
+
+when looking up information about my run to see how I did, I see simple things 
+like distance and speed first before metrics like heartrate
+--------------------------
+
+as a user, I want the app to have customizable goals, so that if I think a 
+workout will be too much or take too long, I can lessen what I do in the workout.
+
+when I have chosen what workout I wish to do for today, I get an option to lessen 
+or leave out parts of the workout in case I do not have the energy or time to 
+complete the full workout.
+---------------------------
+
+as a user, I want the app to keep a record of my progress (progress log), 
+so that I can more easily see the long term progress that I am making through the
+use of this app.
+
+in the app, I can see a day by day record of what I have done, which can show a 
+gradual increase in what I can handle.
+----------------------------
