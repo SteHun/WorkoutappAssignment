@@ -1,0 +1,5 @@
+Until now:
+- (1) **User stories**: Done together
+- (2) **Non-functional requirements**: Done by Stefan
+- (3) **Clarifications**: Done by Stefan
+- (4) **Domain model**: Done mostly by Björn, with some input from Stefan
