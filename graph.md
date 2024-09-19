@@ -5,22 +5,22 @@ classDiagram
       Duration
       Intensity 
     }
-    Workout --|> RunningWorkout
+    Workout --|> RunningWorkout : Type of
     class RunningWorkout{
       Route
       AverageSpeed
     }
-    Workout --|> ThreadmillWorkout 
+    Workout --|> ThreadmillWorkout  : Type of
     class ThreadmillWorkout{
       AverageSpeed
       Equipment
     }
-    Workout --|> WalkingWorkout 
+    Workout --|> WalkingWorkout : Type of
     class WalkingWorkout{
       Route
       AverageSpeed
     }
-    Workout --|> FitnessWorkout 
+    Workout --|> FitnessWorkout : Type of
     class FitnessWorkout{
       Equipment
     }
@@ -29,71 +29,57 @@ classDiagram
       Duration
       Intensity 
     }
-    RunningWorkoutPlan <|-- WorkoutPlan
+    RunningWorkoutPlan <|-- WorkoutPlan : Type of
+
     class RunningWorkoutPlan{
       Length
     }
-    ThreadmillWorkoutPlan <|-- WorkoutPlan
+    ThreadmillWorkoutPlan <|-- WorkoutPlan : Type of
+
     class ThreadmillWorkoutPlan{
       Speeds
     }
-    WalkingWorkoutPlan <|-- WorkoutPlan
+    WalkingWorkoutPlan <|-- WorkoutPlan : Type of
+
     class WalkingWorkoutPlan{
       Length
     }
-    FitnessWorkoutPlan <|-- WorkoutPlan
+    FitnessWorkoutPlan <|-- WorkoutPlan : Type of
+
     class FitnessWorkoutPlan{
       Notes
     }
-    WorkoutPlan -- CurrentActivity
-    CurrentActivity -- Workout
-    class CurrentActivity{
-      Pause()
-      Resume()
+    WorkoutPlan <|-- Current_activity_screen : Shows and keeps to
+    Current_activity_screen --|> Workout : Saves a
+    class Current_activity_screen{
+      Pause Button
+      Resume Button
+      Finish Button
     }
 
     class UserPrefrences{
       Equipment
       ActivityGoal
-      ChangePrefrence()
+      ChangePrefrence Button
     }
 
     class ProgressLog{
       WorkOuts
       Metrics
     }
-    UserPrefrences -- User
-    ProgressLog -- User
-    User -- CurrentActivity :saves
-    class User{
+    UserPrefrences <|-- User_profile: Saved in
+    User_profile --|> ProgressLog : Saved in
+    ProgressLog <|-- Workout: Saved to
+    class User_profile{
       UserPrefrences
       ProgressLog
       FriendList
       SharedWorkouts
       PersonalData
       Language
-      ShareWorkout()
-      ShareWorkoutToOtherPLatforms()
-    }
-```
-```mermaid
-  classDiagram
-    class UserInteface{
-      AppIntroduction
-      settings
-      workoutbutton()
-      settingsbutton()
-      
-    }
-    class encourgement{
-      [messages]
-      sendmessage()
+      Share workout Button
+      Share workout to other platforms Button
     }
 
 
-
-
-    class TODO{
-      User Interface stuff
-    }
 ```
