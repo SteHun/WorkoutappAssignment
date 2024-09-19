@@ -1,3 +1,4 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 As a novice user, I want the app to not have to many options, to make the app feel more 
 inviting. 
 
@@ -11,7 +12,7 @@ day, level and goals, as to motivate me to keep active
 In the app, I see a few suggestions for workouts on this day, depending on my level 
 with several intensities to choose from. 
 -----------------------
-
+**
 As a user, I wish for the app to include a way to share my workouts with friends
 as to motivate myself and others. 
 
@@ -33,7 +34,7 @@ As a user, I want the app to support pre-defined gradual workout plans, such as 
 I can select a pre-defined long-term program to follow from a menu. 
 The app will then suggest the next work-out in line from my program. 
 -----------------------
-
+**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 As a user, I want the app to show me friendly, encouraging messages to 
 further motivate me. 
 
@@ -41,7 +42,7 @@ After a work-out is over, an appropriate message is randomly shown.
 Similar messages appear in the progress log. 
 -----------------------
 
-
+**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%
 As a first-time user, I want the app to include an introduction sequence to 
 request the relevant data, to personallise the app. 
 
@@ -56,7 +57,7 @@ In settings, the user finds an option to set a daily goal for active minutes.
 The home screen shows the goal clearly, as well as a percentage completed. 
 This feature should also be integrated into the push notifications. 
 -----------------------
-
+**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 As a non-English speaking user, I want the app to be translated to my language, 
 allowing me to use the app. 
 
@@ -73,7 +74,7 @@ in the current workout view. When the workout is saved, the taken path,
 including data at each point, should be revealed. 
 -----------------------
 
-
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 As a user, I want to export my achievements to external social media apps 
 to share my progress with friends
 
@@ -88,7 +89,7 @@ As a user, I want to pause the workout, and resume later to take a breather.
 In the currren workout view, there is a pause button. Pressing it pauses the workout. 
 After this, the workout can be resumed or quit. 
 -------------------------
-
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 as a user, I want the app to make it clear every movement is a win,
 so that even on days where I have little energy, I stay motivated to work out,
 even if just a little bit.

@@ -5,29 +5,25 @@ classDiagram
       Duration
       Intensity 
     }
-    RunningWorkout <|-- Workout
+    Workout --|> RunningWorkout
     class RunningWorkout{
       Route
       AverageSpeed
     }
-    ThreadmillWorkout <|-- Workout
+    Workout --|> ThreadmillWorkout 
     class ThreadmillWorkout{
       AverageSpeed
       Equipment
     }
-    WalkingWorkout <|-- Workout
+    Workout --|> WalkingWorkout 
     class WalkingWorkout{
       Route
       AverageSpeed
     }
-    FitnessWorkout <|-- Workout
+    Workout --|> FitnessWorkout 
     class FitnessWorkout{
       Equipment
     }
-```
-
-```mermaid
-  classDiagram
 
     class WorkoutPlan{
       Duration
@@ -49,10 +45,8 @@ classDiagram
     class FitnessWorkoutPlan{
       Notes
     }
-```
-
-```mermaid
-  classDiagram
+    WorkoutPlan -- CurrentActivity
+    CurrentActivity -- Workout
     class CurrentActivity{
       Pause()
       Resume()
@@ -68,17 +62,37 @@ classDiagram
       WorkOuts
       Metrics
     }
-  
+    UserPrefrences -- User
+    ProgressLog -- User
+    User -- CurrentActivity :saves
     class User{
       UserPrefrences
       ProgressLog
       FriendList
       SharedWorkouts
       PersonalData
+      Language
+      ShareWorkout()
+      ShareWorkoutToOtherPLatforms()
     }
 ```
 ```mermaid
   classDiagram
+    class UserInteface{
+      AppIntroduction
+      settings
+      workoutbutton()
+      settingsbutton()
+      
+    }
+    class encourgement{
+      [messages]
+      sendmessage()
+    }
+
+
+
+
     class TODO{
       User Interface stuff
     }
