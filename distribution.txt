@@ -3,3 +3,5 @@ Until now:
 - (2) **Non-functional requirements**: Done by Stefan
 - (3) **Clarifications**: Done by Stefan
 - (4) **Domain model**: Done mostly by Björn, with some input from Stefan
+- (5) **Activity diagram**: done by Björn.
+- (6) **Class diagram**: done by Stefan
