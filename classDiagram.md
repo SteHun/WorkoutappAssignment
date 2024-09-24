@@ -7,6 +7,14 @@ class Controller
 Controller --> User : -User currentUser
 Controller --> Workout : -Workout currentWorkout
 
+class FriendlyMessages{
+    +Dictionary[string, string[]] positiveMessages
+    +Dictionary[string, string[]] encouragingMessages
+    +string RandomPositiveMessage()
+    +string RandomEncouragingMessage()
+}
+<<static>> FriendlyMessages
+
 class User{
     -string userID
     -string userName
@@ -20,6 +28,7 @@ class User{
     +string GetUserName()
     +string GetGender()
     +DateOnly GetBirthDay()
+    +Workout[] GeneratePersonallizedWorkouts()
 }
 
 User --> Post : +Post[] Posts
@@ -83,6 +92,7 @@ class Workout{
     +void ResumeWorkout()
     +void StopWorkout()
     +Dictionary[DateTime, float] HeartRateReadings
+    +Image ExportToImage()
 }
 <<abstract>> Workout
 
@@ -149,21 +159,30 @@ class WalkingWorkout{
 Workout <|-- WalkingWorkout 
 WalkingWorkout --> Route
 
+class FitnessWorkout{
+    +int CustomSetIntensityScore
+    +string Notes
+}
+Workout <|-- FitnessWorkout
+
 class ThreadmillWorkout{
+    +float DurationKilometers
     +float[] Speeds
 }
+
+class Equipment
+<<interface>> Equipment
+
+Equipment ..|> ThreadmillEquipment
 
 class ThreadmillEquipment
 <<interface>> ThreadmillEquipment
 
 Workout <|-- ThreadmillWorkout
 ThreadmillWorkout --> ThreadmillEquipment
+User --> Equipment : +Equipment[] RegisterredEquipment
 
-class FitnessWorkout{
-    +int CustomSetIntensityScore
-}
 
-Workout <|-- FitnessWorkout
 ```
 ## LevelScore
 This is a variable that tracks the user's level, to assist in
