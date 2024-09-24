@@ -4,8 +4,8 @@ classDiagram
 
 class Controller
 <<static>> Controller
-Controller --> User : -User currentUser
-Controller --> Workout : -Workout currentWorkout
+Controller o--> User : -User currentUser
+Controller o--> Workout : -Workout currentWorkout
 
 class FriendlyMessages{
     +Dictionary[string, string[]] positiveMessages
@@ -31,29 +31,71 @@ class User{
     +Workout[] GeneratePersonallizedWorkouts()
 }
 
-User --> Post : +Post[] Posts
+
+class SavedWorkout{
+    +int TimeDuration
+    +DateTime TimeStarted
+    +int GetIntensityScore()
+    +Dictionary[DateTime, float] HeartRateReadings
+    +Image ExportAsImage()
+}
+<<abstract>> SavedWorkout
+
+class SavedThreadmillWorkout{
+    +float DurationKilometers
+    +float[] Speeds
+}
+
+SavedWorkout <|-- SavedThreadmillWorkout
+
+class SavedRunningWorkout{
+    +float DurationKilometers
+    +float[] Speeds
+}
+
+class SavedFitnessWorkout{
+    +string Notes
+}
+
+SavedWorkout <|-- SavedFitnessWorkout
+
+SavedWorkout <|-- SavedRunningWorkout
+
+SavedRunningWorkout o--> Route : +Route RouteTaken
+
+class SavedWalkingWorkout{
+    +float DurationKilometers
+    +float[] Speeds
+}
+
+SavedWorkout <|-- SavedWalkingWorkout
+
+SavedWalkingWorkout o--> Route : +Route RouteTaken
+
+
+User o--> Post : +Post[] Posts
 
 class Post{
     +string Title
     +int Likes
 }
-Post --> Workout
+Post o--> Workout
 
-User --> ActivityLog
+User o--> ActivityLog : +ActivityLog ActivityLog
 class ActivityLog{
     +int[] GetWeeklyIntensityScores()
 }
 
-ActivityLog --> Workout : Workout[] CompletedWorkouts
+ActivityLog o--> SavedWorkout : +Workout[] CompletedWorkouts
 
-User --> LongTermPlan : LongTermPlan CurrentLongTermPlan
+User o--> LongTermPlan : +LongTermPlan CurrentLongTermPlan
 class LongTermPlan{
     +string WorkoutName
     +int Progress
     +static LongTermPlan ImportFromFile(string filename)
 }
 
-LongTermPlan --> IWorkoutPlan : IWorkoutPlan[] Workouts
+LongTermPlan o--> IWorkoutPlan : +IWorkoutPlan[] Workouts
 <<interface>> IWorkoutPlan
 class I WorkoutPlan{
     +string WorkoutName
@@ -91,10 +133,12 @@ class Workout{
     +void PauseWorkout()
     +void ResumeWorkout()
     +void StopWorkout()
+    +SavedWorkout GenerateSavedWorkout()
     +Dictionary[DateTime, float] HeartRateReadings
-    +Image ExportToImage()
 }
 <<abstract>> Workout
+
+Workout ..> SavedWorkout : Create
 
 class HeartRateMonitor{
     +void Activate()
@@ -120,13 +164,13 @@ class HeartRateMonitorAdapter{
     
 }
 IHeartRateMonitor <|.. HeartRateMonitorAdapter
-HeartRateMonitorAdapter *-- HeartRateMonitor
+HeartRateMonitorAdapter *-- HeartRateMonitor : -HeartRactMonitor monitor
 
 class ProHeartBeaterAdapter{
     
 }
 IHeartRateMonitor <|.. ProHeartBeaterAdapter
-ProHeartBeaterAdapter *-- ProHeartBeater
+ProHeartBeaterAdapter *-- ProHeartBeater : -ProHeartBeater monitor
 
 class IMaps4All{
     +LoadMap()
@@ -137,27 +181,27 @@ class IMaps4All{
     +[..]()
 }
 
-Workout ..> IHeartRateMonitor
+Workout ..> IHeartRateMonitor : Call
 
 class Route{
     +Vector2[] RoutePoints
     +void TrackCurrentLocation()
 }
-Route --> IMaps4All
+Route *-- IMaps4All : -IMaps4All mapService
 
 class RunningWorkout{
     +float DurationKilometers
     +float[] Speeds
 }
 Workout <|-- RunningWorkout 
-RunningWorkout --> Route
+RunningWorkout o--> Route : +Route RouteTaken
 
 class WalkingWorkout{
     +float DurationKilometers
     +float[] Speeds
 }
 Workout <|-- WalkingWorkout 
-WalkingWorkout --> Route
+WalkingWorkout o--> Route : +Route RouteTaken
 
 class FitnessWorkout{
     +int CustomSetIntensityScore
@@ -179,8 +223,8 @@ class ThreadmillEquipment
 <<interface>> ThreadmillEquipment
 
 Workout <|-- ThreadmillWorkout
-ThreadmillWorkout --> ThreadmillEquipment
-User --> Equipment : +Equipment[] RegisterredEquipment
+ThreadmillWorkout o--> ThreadmillEquipment : +ThreadmillEquipment Threadmill
+User o--> Equipment : +Equipment[] RegisterredEquipment
 Equipment ..|> ThreadmillEquipment
 
 ```
@@ -196,3 +240,13 @@ Get a score judging the effort of a particular workout
 This type is used in the ThreadmillWorkoutPlan. 
 We first wanted to use a tuple, but the UML software would'nt let us
 type < or >. 
+
+## FriendlyMessages
+This is a static class wich could be used by the UI. 
+We are including it because it was a simple addition
+and showed up often in the document. 
+
+## ThreadmillEquipment
+We want the app to be ready to support threadmills, 
+but we don't have access to usable API's at the moment. 
+Therefore, we designated an interface for them that remains empty for now. 
