@@ -7,7 +7,7 @@ class User{
     -string gender
     -Date birthDay
     +string[] FriendIDs
-    +Dictionary<string, string> appPrefrences
+    +Dictionary[string, string] appPrefrences
     +int MinutesPerDayGoal
     +int LevelScore
     +string GetUserId()
@@ -56,6 +56,7 @@ class Workout{
     +int Time
     +int GetIntensityScore()
     +void UpdateAsCurrentWorkout(IHeartRateMonitor)
+    +Dictionary[DateTime, float] HeartRateReadings
 }
 <<abstract>> Workout
 
@@ -101,13 +102,42 @@ class IMaps4All{
 }
 
 Workout ..> IHeartRateMonitor
-Workout --> Route
 
 class Route{
     +Vector2[] RoutePoints
     +void TrackCurrentLocation()
 }
 Route --> IMaps4All
+
+class RunningWorkout{
+    +float DurationKilometers
+    +float[] Speeds
+}
+Workout <|-- RunningWorkout 
+RunningWorkout --> Route
+
+class WalkingWorkout{
+    +float DurationKilometers
+    +float[] Speeds
+}
+Workout <|-- WalkingWorkout 
+WalkingWorkout --> Route
+
+class ThreadmillWorkout{
+    +float[] Speeds
+}
+
+class ThreadmillEquipment
+<<interface>> ThreadmillEquipment
+
+Workout <|-- ThreadmillWorkout
+ThreadmillWorkout --> ThreadmillEquipment
+
+class FitnessWorkout{
+    +int CustomSetIntensityScore
+}
+
+Workout <|-- FitnessWorkout
 ```
 ## LevelScore
 This is a variable that tracks the userś level, to assist in
