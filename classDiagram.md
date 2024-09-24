@@ -89,6 +89,23 @@ class ProHeartBeaterAdapter{
 IHeartRateMonitor ..|> ProHeartBeaterAdapter
 ProHeartBeaterAdapter *-- ProHeartBeater
 
+class IMaps4All{
+    +LoadMap()
+    +StartTrack()
+    +StopTrack()
+    +PauseTrack()
+    +GetPosition()
+    +[..]()
+}
+
+Workout --> IHeartRateMonitor
+Workout --> Route
+
+class Route{
+    +Vector2[] RoutePoints
+    +void TrackCurrentLocation()
+}
+Route --> IMaps4All
 ```
 ## LevelScore
 This is a variable that tracks the userś level, to assist in
@@ -96,7 +113,7 @@ generating workouts. It remains invisible as to not rank people
 based on their fitness, going agains the friendly nature of the app. 
 
 ## GetIntensityScore()
-Get a score judging t
+Get a score judging the effort of a particular workout
 
 ## SpeedAndDuration
 This type is used in the ThreadmillWorkoutPlan. 
