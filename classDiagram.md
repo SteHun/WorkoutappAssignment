@@ -173,7 +173,7 @@ class ThreadmillWorkout{
 class Equipment
 <<interface>> Equipment
 
-Equipment ..|> ThreadmillEquipment
+
 
 class ThreadmillEquipment
 <<interface>> ThreadmillEquipment
@@ -181,7 +181,7 @@ class ThreadmillEquipment
 Workout <|-- ThreadmillWorkout
 ThreadmillWorkout --> ThreadmillEquipment
 User --> Equipment : +Equipment[] RegisterredEquipment
-
+Equipment ..|> ThreadmillEquipment
 
 ```
 ## LevelScore
