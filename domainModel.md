@@ -67,8 +67,8 @@ classDiagram
       WorkOuts
       Metrics
     }
-    UserPrefrences <|-- User_profile: Saved in
-    User_profile --|> ProgressLog : Saved in
+    UserPrefrences --|> User_profile: Saved in
+    User_profile <|-- ProgressLog : Saved in
     ProgressLog <|-- Workout: Saved to
     class User_profile{
       UserPrefrences
