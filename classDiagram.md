@@ -55,7 +55,9 @@ class FitnessWorkoutPlan{
 class Workout{
     +int Time
     +int GetIntensityScore()
+    +void UpdateAsCurrentWorkout(IHeartRateMonitor)
 }
+<<abstract>> Workout
 
 class HeartRateMonitor{
     +void Activate()
@@ -98,7 +100,7 @@ class IMaps4All{
     +[..]()
 }
 
-Workout --> IHeartRateMonitor
+Workout ..> IHeartRateMonitor
 Workout --> Route
 
 class Route{
