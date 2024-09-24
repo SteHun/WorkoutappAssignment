@@ -5,6 +5,7 @@ class User{
     -string userID
     -string userName
     -string gender
+    -Date birthDay
     +string[] FriendIDs
     +Dictionary<string, string> appPrefrences
     +int MinutesPerDayGoal
@@ -12,6 +13,7 @@ class User{
     +string GetUserId()
     +string GetUserName()
     +string GetGender()
+    +DateOnly GetBirthDay()
 }
 
 User --> LongTermPlan : LongTermPlan CurrentLongTermPlan
@@ -20,35 +22,73 @@ class LongTermPlan{
     +int Progress
 }
 
-LongTermPlan --> WorkoutPlan : WorkoutPlan[] Workouts
-<<interface>> WorkoutPlan
-class WorkoutPlan{
+LongTermPlan --> IWorkoutPlan : IWorkoutPlan[] Workouts
+<<interface>> IWorkoutPlan
+class I WorkoutPlan{
     +string WorkoutName
     +int GetIntensityScore()
 }
 
-RunningWorkoutPlan ..|> WorkoutPlan
+RunningWorkoutPlan ..|> IWorkoutPlan
 
 class RunningWorkoutPlan{
     +float DurationKilometers
 }
-ThreadmillWorkoutPlan ..|> WorkoutPlan 
+ThreadmillWorkoutPlan ..|> IWorkoutPlan 
 
 class ThreadmillWorkoutPlan{
     +SpeedAndDuration[] Speeds
 }
 
 
-WalkingWorkoutPlan ..|> WorkoutPlan 
+WalkingWorkoutPlan ..|> IWorkoutPlan 
 
 class WalkingWorkoutPlan{
     +float DurationKilometers
 }
-FitnessWorkoutPlan ..|> WorkoutPlan
+FitnessWorkoutPlan ..|> IWorkoutPlan
 
 class FitnessWorkoutPlan{
     +string Notes
 }
+
+class Workout{
+    +int Time
+    +int GetIntensityScore()
+}
+
+class HeartRateMonitor{
+    +void Activate()
+    +void Deactivate()
+    +void StartSession(int age)
+    +int ReadCurrentHeartRate()
+    +int GetAverageHeartRate()
+}
+
+class ProHeartBeater{
+    +void StartTracking()
+    +float GetHeartBeat()
+    +float[] GetHeartBeats()
+}
+
+class IHeartRateMonitor{
+    +void Initialize(int age)
+    +float GetHeartRate()
+}
+<<interface>> IHeartRateMonitor
+
+class HeartRateMonitorAdapter{
+    
+}
+IHeartRateMonitor ..|> HeartRateMonitorAdapter
+HeartRateMonitorAdapter *-- HeartRateMonitor
+
+class ProHeartBeaterAdapter{
+    
+}
+IHeartRateMonitor ..|> ProHeartBeaterAdapter
+ProHeartBeaterAdapter *-- ProHeartBeater
+
 ```
 ## LevelScore
 This is a variable that tracks the userś level, to assist in
