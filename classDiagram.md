@@ -80,13 +80,13 @@ class IHeartRateMonitor{
 class HeartRateMonitorAdapter{
     
 }
-IHeartRateMonitor ..|> HeartRateMonitorAdapter
+IHeartRateMonitor <|.. HeartRateMonitorAdapter
 HeartRateMonitorAdapter *-- HeartRateMonitor
 
 class ProHeartBeaterAdapter{
     
 }
-IHeartRateMonitor ..|> ProHeartBeaterAdapter
+IHeartRateMonitor <|.. ProHeartBeaterAdapter
 ProHeartBeaterAdapter *-- ProHeartBeater
 
 class IMaps4All{
