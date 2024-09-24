@@ -1,6 +1,12 @@
 # Class diagram
 ```mermaid
 classDiagram
+
+class Controller
+<<static>> Controller
+Controller --> User : -User currentUser
+Controller --> Workout : -Workout currentWorkout
+
 class User{
     -string userID
     -string userName
@@ -16,10 +22,26 @@ class User{
     +DateOnly GetBirthDay()
 }
 
+User --> Post : +Post[] Posts
+
+class Post{
+    +string Title
+    +int Likes
+}
+Post --> Workout
+
+User --> ActivityLog
+class ActivityLog{
+    +int[] GetWeeklyIntensityScores()
+}
+
+ActivityLog --> Workout : Workout[] CompletedWorkouts
+
 User --> LongTermPlan : LongTermPlan CurrentLongTermPlan
 class LongTermPlan{
     +string WorkoutName
     +int Progress
+    +static LongTermPlan ImportFromFile(string filename)
 }
 
 LongTermPlan --> IWorkoutPlan : IWorkoutPlan[] Workouts
@@ -53,9 +75,13 @@ class FitnessWorkoutPlan{
 }
 
 class Workout{
-    +int Time
+    +int TimeDuration
+    +DateTime TimeStarted
     +int GetIntensityScore()
     +void UpdateAsCurrentWorkout(IHeartRateMonitor)
+    +void PauseWorkout()
+    +void ResumeWorkout()
+    +void StopWorkout()
     +Dictionary[DateTime, float] HeartRateReadings
 }
 <<abstract>> Workout
@@ -140,7 +166,7 @@ class FitnessWorkout{
 Workout <|-- FitnessWorkout
 ```
 ## LevelScore
-This is a variable that tracks the userś level, to assist in
+This is a variable that tracks the user's level, to assist in
 generating workouts. It remains invisible as to not rank people 
 based on their fitness, going agains the friendly nature of the app. 
 
