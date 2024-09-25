@@ -79,7 +79,7 @@ class Post{
     +string Title
     +int Likes
 }
-Post o--> Workout
+Post o--> SavedWorkout
 
 User o--> ActivityLog : +ActivityLog ActivityLog
 class ActivityLog{
