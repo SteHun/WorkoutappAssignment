@@ -61,7 +61,7 @@ SavedWorkout <|-- SavedFitnessWorkout
 
 SavedWorkout <|-- SavedRunningWorkout
 
-SavedRunningWorkout o--> Route : +Route RouteTaken
+SavedRunningWorkout o--> Route: +RouteTracker RouteTaken
 
 class SavedWalkingWorkout{
     +float DurationKilometers
@@ -70,7 +70,7 @@ class SavedWalkingWorkout{
 
 SavedWorkout <|-- SavedWalkingWorkout
 
-SavedWalkingWorkout o--> Route : +Route RouteTaken
+SavedWalkingWorkout o--> Route: +RouteTracker RouteTaken
 
 
 User o--> Post : +Post[] Posts
@@ -129,7 +129,7 @@ class Workout{
     +int TimeDuration
     +DateTime TimeStarted
     +int GetIntensityScore()
-    +void UpdateAsCurrentWorkout(IHeartRateMonitor)
+    +void UpdateAsCurrentWorkout()
     +void PauseWorkout()
     +void ResumeWorkout()
     +void StopWorkout()
@@ -154,6 +154,11 @@ class ProHeartBeater{
     +float[] GetHeartBeats()
 }
 
+class RunningWorkout{
+    +float DurationKilometers
+    +float[] Speeds
+}
+
 class IHeartRateMonitor{
     +void Initialize(int age)
     +float GetHeartRate()
@@ -163,8 +168,9 @@ class IHeartRateMonitor{
 class HeartRateMonitorAdapter{
     
 }
-IHeartRateMonitor <|.. HeartRateMonitorAdapter
+HeartRateMonitorAdapter ..|> IHeartRateMonitor
 HeartRateMonitorAdapter *-- HeartRateMonitor : -HeartRactMonitor monitor
+
 
 class ProHeartBeaterAdapter{
     
@@ -172,36 +178,30 @@ class ProHeartBeaterAdapter{
 IHeartRateMonitor <|.. ProHeartBeaterAdapter
 ProHeartBeaterAdapter *-- ProHeartBeater : -ProHeartBeater monitor
 
-class IMaps4All{
-    +LoadMap()
-    +StartTrack()
-    +StopTrack()
-    +PauseTrack()
-    +GetPosition()
-    +[..]()
-}
 
-Workout ..> IHeartRateMonitor : Call
+Workout --> IHeartRateMonitor : -IHeartRateMonitor HeartRateMonitor
 
 class Route{
+    +Vector2[] RoutePoint
+}
+
+class RouteTracker{
     +Vector2[] RoutePoints
     +void TrackCurrentLocation()
 }
-Route *-- IMaps4All : -IMaps4All mapService
 
-class RunningWorkout{
-    +float DurationKilometers
-    +float[] Speeds
-}
+RouteTracker o--> Route : +Route TrackedRoute
+
+
 Workout <|-- RunningWorkout 
-RunningWorkout o--> Route : +Route RouteTaken
+RunningWorkout o--> RouteTracker : +RouteTracker RouteTaken
 
 class WalkingWorkout{
     +float DurationKilometers
     +float[] Speeds
 }
 Workout <|-- WalkingWorkout 
-WalkingWorkout o--> Route : +Route RouteTaken
+WalkingWorkout o--> RouteTracker : +RouteTracker RouteTaken
 
 class FitnessWorkout{
     +int CustomSetIntensityScore
@@ -229,6 +229,16 @@ Workout <|-- TreadmillWorkout
 TreadmillWorkout o--> ITreadmillEquipment : +ITreadmillEquipment Treadmill
 User o--> IEquipment : +IEquipment[] RegisterredEquipment
 IEquipment ..|> ITreadmillEquipment
+
+RouteTracker *-- IMaps4All : -IMaps4All mapService
+class IMaps4All{
+    +LoadMap()
+    +StartTrack()
+    +StopTrack()
+    +PauseTrack()
+    +GetPosition()
+    +[..]()
+}
 
 ```
 ## LevelScore
