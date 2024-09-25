@@ -214,7 +214,10 @@ class TreadmillWorkout{
     +float[] Speeds
 }
 
-class IEquipment
+class IEquipment{
+    +string EquipmentName
+    +string ManufacturerName
+}
 <<interface>> IEquipment
 
 
