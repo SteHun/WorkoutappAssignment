@@ -214,8 +214,8 @@ class TreadmillWorkout{
     +float[] Speeds
 }
 
-class Equipment
-<<interface>> Equipment
+class IEquipment
+<<interface>> IEquipment
 
 
 
@@ -224,8 +224,8 @@ class ITreadmillEquipment
 
 Workout <|-- TreadmillWorkout
 TreadmillWorkout o--> ITreadmillEquipment : +ITreadmillEquipment Treadmill
-User o--> Equipment : +Equipment[] RegisterredEquipment
-Equipment ..|> ITreadmillEquipment
+User o--> IEquipment : +IEquipment[] RegisterredEquipment
+IEquipment ..|> ITreadmillEquipment
 
 ```
 ## LevelScore
