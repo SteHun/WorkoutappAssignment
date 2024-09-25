@@ -222,7 +222,7 @@ class Equipment
 class ITreadmillEquipment
 <<interface>> ITreadmillEquipment
 
-Workout <|-- ITreadmillWorkout
+Workout <|-- TreadmillWorkout
 TreadmillWorkout o--> ITreadmillEquipment : +ITreadmillEquipment Treadmill
 User o--> Equipment : +Equipment[] RegisterredEquipment
 Equipment ..|> ITreadmillEquipment
