@@ -19,7 +19,7 @@ class User{
     -string userID
     -string userName
     -string gender
-    -Date birthDay
+    -Date birthday
     +string[] FriendIDs
     +Dictionary[string, string] appPrefrences
     +int MinutesPerDayGoal
@@ -41,12 +41,12 @@ class SavedWorkout{
 }
 <<abstract>> SavedWorkout
 
-class SavedThreadmillWorkout{
+class SavedTreadmillWorkout{
     +float DurationKilometers
     +float[] Speeds
 }
 
-SavedWorkout <|-- SavedThreadmillWorkout
+SavedWorkout <|-- SavedTreadmillWorkout
 
 class SavedRunningWorkout{
     +float DurationKilometers
@@ -97,7 +97,7 @@ class LongTermPlan{
 
 LongTermPlan o--> IWorkoutPlan : +IWorkoutPlan[] Workouts
 <<interface>> IWorkoutPlan
-class I WorkoutPlan{
+class IWorkoutPlan{
     +string WorkoutName
     +int GetIntensityScore()
 }
@@ -107,9 +107,9 @@ RunningWorkoutPlan ..|> IWorkoutPlan
 class RunningWorkoutPlan{
     +float DurationKilometers
 }
-ThreadmillWorkoutPlan ..|> IWorkoutPlan 
+TreadmillWorkoutPlan ..|> IWorkoutPlan 
 
-class ThreadmillWorkoutPlan{
+class TreadmillWorkoutPlan{
     +SpeedAndDuration[] Speeds
 }
 
@@ -209,7 +209,7 @@ class FitnessWorkout{
 }
 Workout <|-- FitnessWorkout
 
-class ThreadmillWorkout{
+class TreadmillWorkout{
     +float DurationKilometers
     +float[] Speeds
 }
@@ -219,13 +219,13 @@ class Equipment
 
 
 
-class ThreadmillEquipment
-<<interface>> ThreadmillEquipment
+class ITreadmillEquipment
+<<interface>> ITreadmillEquipment
 
-Workout <|-- ThreadmillWorkout
-ThreadmillWorkout o--> ThreadmillEquipment : +ThreadmillEquipment Threadmill
+Workout <|-- ITreadmillWorkout
+TreadmillWorkout o--> ITreadmillEquipment : +ITreadmillEquipment Treadmill
 User o--> Equipment : +Equipment[] RegisterredEquipment
-Equipment ..|> ThreadmillEquipment
+Equipment ..|> ITreadmillEquipment
 
 ```
 ## LevelScore
